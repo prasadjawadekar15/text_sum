@@ -2,10 +2,15 @@ import nltk
 import math
 import streamlit as st
 from nltk.corpus import stopwords
-from nltk.tokenize import sent_tokenize, word_tokenize
+
 from nltk.stem import PorterStemmer
 
+import nltk
+from nltk.tokenize.punkt import PunktSentenceTokenizer
+tokenizer = PunktSentenceTokenizer()
 
+def split_into_sentences(text):
+    return tokenizer.tokenize(text)
 
 # Initialize stemmer and stopwords
 stop_words = set(stopwords.words("english"))
