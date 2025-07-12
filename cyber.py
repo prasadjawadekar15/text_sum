@@ -1,7 +1,7 @@
 import nltk
 import math
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+
 from nltk.tokenize.punkt import PunktSentenceTokenizer
 from nltk.stem import PorterStemmer
 import streamlit as st
@@ -11,6 +11,7 @@ from nltk.stem import PorterStemmer
 import nltk
 from nltk.tokenize.punkt import PunktSentenceTokenizer
 tokenizer = PunktSentenceTokenizer()
+import re
 
 
 
@@ -26,7 +27,7 @@ def split_into_sentences(text):
 def create_frequency_matrix(sentences):
     freq_matrix = {}
     for sent in sentences:
-        words = word_tokenize(sent.lower())
+        words = re.findall(r'\b\w+\b', sent.lower())
         words = [ps.stem(word) for word in words if word.isalnum() and word not in stop_words]
         freq_table = {}
         for word in words:
