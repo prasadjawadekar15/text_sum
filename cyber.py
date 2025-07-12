@@ -5,9 +5,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk.stem import PorterStemmer
 
-# Download NLTK resources (first time only)
-nltk.download("punkt")
-nltk.download("stopwords")
+
 
 # Initialize stemmer and stopwords
 stop_words = set(stopwords.words("english"))
