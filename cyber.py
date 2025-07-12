@@ -9,8 +9,7 @@ import nltk
 from nltk.tokenize.punkt import PunktSentenceTokenizer
 tokenizer = PunktSentenceTokenizer()
 
-def split_into_sentences(text):
-    return tokenizer.tokenize(text)
+
 
 # Initialize stemmer and stopwords
 stop_words = set(stopwords.words("english"))
@@ -18,7 +17,7 @@ ps = PorterStemmer()
 
 # Step 1: Sentence Tokenization
 def split_into_sentences(text):
-    return sent_tokenize(text)
+    return tokenizer.tokenize(text)
 
 # Step 2: Create Frequency Matrix for each sentence
 def create_frequency_matrix(sentences):
