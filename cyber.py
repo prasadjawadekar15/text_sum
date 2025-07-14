@@ -1,4 +1,8 @@
 import nltk
+
+# Ensure nltk data is available every time
+nltk.download('punkt')
+nltk.download('stopwords')
 import math
 from nltk.corpus import stopwords
 
